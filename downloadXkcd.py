@@ -93,7 +93,8 @@ while not url.endswith('#'):
     url = 'http://xkcd.com' + prevLink.get('href')
 
 print("Cleaning up...")
-folder = os.path.abspath('C:\\path\\to\\your\\xkcd')
+cwd = os.getcwd()
+folder = os.path.abspath(cwd+'\\xkcd')
 for foldername, subfolders, filenames in os.walk(folder):
     for filename in filenames:
         if not (filename.endswith('combined.png') or filename.endswith('lyrics.png')):
